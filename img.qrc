@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/workplace.jpg</file>
+        <file>img/close.svg</file>
+    </qresource>
+</RCC>
