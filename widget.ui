@@ -388,6 +388,9 @@ border-radius: 30px;</string>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
+       <property name="toolTip">
+        <string>Quản lý các dự án</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#btnHome:hover {
 background-color: rgb(255, 255, 255);
@@ -419,6 +422,9 @@ border-radius: 35px;
        </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>Trò chuyện với các thành viên</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#btnLiveChat:hover {
@@ -452,6 +458,9 @@ border-radius: 35px;
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
+       <property name="toolTip">
+        <string>Quản lý thời gian biểu</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#btnCalendar:hover {
 background-color: rgb(255, 255, 255);
@@ -483,6 +492,9 @@ border-radius: 35px;
        </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>Trò chuyện qua video</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#btnVideo:hover {
@@ -516,6 +528,9 @@ border-radius: 35px;
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
+       <property name="toolTip">
+        <string>Thông tin về ứng dụng và tác giả</string>
+       </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
@@ -544,6 +559,9 @@ border-radius: 35px;
        </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>Quản lý thông tin thành viên</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#btnUser:hover {
