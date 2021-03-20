@@ -3,6 +3,10 @@
         <file>img/workplace.jpg</file>
         <file>img/close.svg</file>
         <file>img/home.svg</file>
-        <file>img/home_.svg</file>
+        <file>img/chat.svg</file>
+        <file>img/calendar.svg</file>
+        <file>img/video-camera.svg</file>
+        <file>img/information.svg</file>
+        <file>img/user.svg</file>
     </qresource>
 </RCC>
