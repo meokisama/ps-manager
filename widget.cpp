@@ -12,3 +12,8 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+void Widget::on_closeButton_clicked()
+{
+    close();
+}
