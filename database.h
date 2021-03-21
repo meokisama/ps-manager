@@ -12,10 +12,12 @@ class Database
 {
 public:
     Database();
-    void connectDB();
+    bool connectDB();
+    bool Login(QString u, QString p);
     void disConnectDB();
     QSqlQuery Query(QString q);
-    QSqlDatabase getDB();
+    int checkInfo(QString u, QString e);
+    bool Signup(QString fn, QString ln, QString u, QString p, QString e);
 private:
     QSqlDatabase db;
 };

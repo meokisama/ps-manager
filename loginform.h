@@ -15,12 +15,19 @@ class LoginForm : public QWidget
 public:
     explicit LoginForm(QWidget *parent = nullptr);
     ~LoginForm();
-    bool Login(QString u, QString p);
 
 private slots:
     void on_pushButton_clicked();
 
     void on_closeButton_clicked();
+
+    void on_signUp_clicked();
+
+    void on_logIn_clicked();
+
+    void on_closeButton_2_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::LoginForm *ui;
