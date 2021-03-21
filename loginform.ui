@@ -260,6 +260,30 @@ color: rgb(79, 84, 188);
       <normaloff>:/img/img/close.svg</normaloff>:/img/img/close.svg</iconset>
     </property>
    </widget>
+   <widget class="QLabel" name="state">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>470</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poppins Medium</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 85, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <zorder>frame_2</zorder>
   <zorder>label_2</zorder>

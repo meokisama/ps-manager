@@ -15,6 +15,7 @@ class LoginForm : public QWidget
 public:
     explicit LoginForm(QWidget *parent = nullptr);
     ~LoginForm();
+    bool Login(QString u, QString p);
 
 private slots:
     void on_pushButton_clicked();
@@ -24,6 +25,8 @@ private slots:
 private:
     Ui::LoginForm *ui;
     Widget *main;
+    QString username;
+    QString password;
 };
 
 #endif // LOGINFORM_H
