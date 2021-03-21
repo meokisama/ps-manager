@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Projects Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/img/img/tasks.svg</normaloff>:/img/img/tasks.svg</iconset>
   </property>
   <widget class="QLabel" name="label_2">
    <property name="enabled">

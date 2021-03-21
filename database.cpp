@@ -4,12 +4,16 @@ Database::Database() {}
 
 bool Database::connectDB()
 {
-    QString dbPath(QCoreApplication::applicationDirPath()+"/../../ProjectManager/database.db");
+    QString dbPath(QCoreApplication::applicationDirPath()+"/../database.db");
 
     this->db = QSqlDatabase::addDatabase("QSQLITE");
     this->db.setDatabaseName(dbPath);
 
-    if(db.open()) return true;
+    if(db.open())
+    {
+        initialQuery();
+        return true;
+    }
     else return false;
 }
 
@@ -24,6 +28,18 @@ QSqlQuery Query(QString q)
     return query;
 }
 
+void Database::initialQuery()
+{
+    QSqlQuery createUSER(db);
+    createUSER.prepare("CREATE TABLE USER (USERNAME TEXT, HO TEXT, TEN TEXT, EMAIL TEXT, PASSWORD TXT)");
+    if(createUSER.exec())
+    {
+        QSqlQuery firstUser(db);
+        firstUser.prepare("INSERT INTO USER VALUES ('meokisama', 'Hoàng Đình', 'Sáng', 'hi@meoki.net', '1082001')");
+        firstUser.exec();
+    }
+}
+
 bool Database::Login(QString u, QString p)
 {
     bool exist = false;
@@ -31,14 +47,12 @@ bool Database::Login(QString u, QString p)
     QSqlQuery check(db);
 
     // 1. Check username or email with Qt function
-    /*
-    if (u.contains("@",Qt::CaseInsensitive))
-    {
-        check.prepare("SELECT USERNAME FROM USER WHERE EMAIL = (:un) AND PASSWORD = (:pw)");
-    } else {
-        check.prepare("SELECT USERNAME FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
-    }
-    */
+    #if 0
+        if (u.contains("@",Qt::CaseInsensitive))
+            check.prepare("SELECT USERNAME FROM USER WHERE EMAIL = (:un) AND PASSWORD = (:pw)");
+        else
+            check.prepare("SELECT USERNAME FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
+    #endif
 
     // 2. Or check with SQL query
     check.prepare("SELECT USERNAME FROM USER WHERE (USERNAME = (:un) OR EMAIL = (:un)) AND PASSWORD = (:pw)");

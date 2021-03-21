@@ -18,6 +18,7 @@ public:
     QSqlQuery Query(QString q);
     int checkInfo(QString u, QString e);
     bool Signup(QString fn, QString ln, QString u, QString p, QString e);
+    void initialQuery();
 private:
     QSqlDatabase db;
 };

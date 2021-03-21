@@ -95,7 +95,14 @@ void LoginForm::on_pushButton_2_clicked()
 
     else if(database.checkInfo(un, em) == 2) ui->state_2->setText("This email has been used!");
 
-         else if(database.Signup(fn, ln, un, pw, em)) ui->state_2->setText("Sign up seccessfully! Click login below to continue.");
-
-              else ui->state_2->setText("Error!");
+         else if(database.Signup(fn, ln, un, pw, em))
+              {
+                ui->stackedWidget->setCurrentIndex(0);
+                ui->state->setText("Sign up seccessfully! You can now login.");
+                ui->fname->setText("");
+                ui->lname->setText("");
+                ui->passWord->setText("");
+                ui->userName->setText("");
+                ui->email->setText("");
+              } else ui->state_2->setText("Error!");
 }
