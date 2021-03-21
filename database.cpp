@@ -53,7 +53,7 @@ bool Database::Login(QString u, QString p)
 
 int Database::checkInfo(QString u, QString e)
 {
-    int checker;
+    int checker = 0;
 
     // Check if username is used
     QSqlQuery uQuery(db);
@@ -73,7 +73,7 @@ int Database::checkInfo(QString u, QString e)
 bool Database::Signup(QString fn, QString ln, QString u, QString p, QString e)
 {
     QSqlQuery signupQuery(db);
-    signupQuery.prepare("INSERT INTO USER VALUES(:un, :fn, :ln, em; :pw)");
+    signupQuery.prepare("INSERT INTO USER VALUES(:un, :fn, :ln, :em, :pw)");
     signupQuery.bindValue(":un", u);
     signupQuery.bindValue(":fn", fn);
     signupQuery.bindValue(":ln", ln);
