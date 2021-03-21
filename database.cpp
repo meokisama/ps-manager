@@ -31,7 +31,7 @@ QSqlQuery Query(QString q)
 void Database::initialQuery()
 {
     QSqlQuery createUSER(db);
-    createUSER.prepare("CREATE TABLE USER (USERNAME TEXT, HO TEXT, TEN TEXT, EMAIL TEXT, PASSWORD TXT)");
+    createUSER.prepare("CREATE TABLE IF NOT EXISTS USER (USERNAME TEXT, HO TEXT, TEN TEXT, EMAIL TEXT, PASSWORD TXT)");
     if(createUSER.exec())
     {
         QSqlQuery firstUser(db);

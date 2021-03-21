@@ -1,5 +1,10 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include "loginform.h"
+#include "database.h"
+
+#include <QSqlRecord>
+
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -46,4 +51,28 @@ void Widget::on_btInfo_clicked()
 void Widget::on_btnUser_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+
+    QSqlQuery fetcher;
+    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
+    fetcher.bindValue(":un", LoginForm::getUsername());
+    fetcher.bindValue(":pw", LoginForm::getPassword());
+    fetcher.exec();
+
+    int iUN = fetcher.record().indexOf("USERNAME");
+    int iPW = fetcher.record().indexOf("PASSWORD");
+    int iFN = fetcher.record().indexOf("HO");
+    int iLN = fetcher.record().indexOf("TEN");
+    int iEM = fetcher.record().indexOf("EMAIL");
+
+    while(fetcher.next())
+    {
+        ui->fname->setText(fetcher.value(iFN).toString());
+        ui->lname->setText(fetcher.value(iLN).toString());
+        ui->un->setText(fetcher.value(iUN).toString());
+        ui->pw->setText(fetcher.value(iPW).toString());
+        ui->em->setText(fetcher.value(iEM).toString());
+        QString full = fetcher.value(iFN).toString();
+        ui->fullname->setText(full.append(" ").append(fetcher.value(iLN).toString()));
+    }
+
 }

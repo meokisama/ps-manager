@@ -19,6 +19,9 @@ LoginForm::~LoginForm()
     delete ui;
 }
 
+QString LoginForm::username;
+QString LoginForm::password;
+
 void LoginForm::on_pushButton_clicked()
 {
     if (database.Login(ui->username->text(),ui->password->text()))
@@ -105,4 +108,14 @@ void LoginForm::on_pushButton_2_clicked()
                 ui->userName->setText("");
                 ui->email->setText("");
               } else ui->state_2->setText("Error!");
+}
+
+QString LoginForm::getUsername()
+{
+    return LoginForm::username;
+}
+
+QString LoginForm::getPassword()
+{
+    return LoginForm::password;
 }
