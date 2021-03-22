@@ -2,6 +2,8 @@
 
 Database::Database() {}
 
+QSqlDatabase Database::db;
+
 bool Database::connectDB()
 {
     QString dbPath(QCoreApplication::applicationDirPath()+"/../database.db");
@@ -31,7 +33,7 @@ QSqlQuery Query(QString q)
 void Database::initialQuery()
 {
     QSqlQuery createUSER(db);
-    createUSER.prepare("CREATE TABLE IF NOT EXISTS USER (USERNAME TEXT, HO TEXT, TEN TEXT, EMAIL TEXT, PASSWORD TXT)");
+    createUSER.prepare("CREATE TABLE IF NOT EXISTS USER (USERNAME TEXT UNIQUE, HO TEXT, TEN TEXT, EMAIL TEXT UNIQUE, PASSWORD TXT)");
     if(createUSER.exec())
     {
         QSqlQuery firstUser(db);
@@ -95,5 +97,19 @@ bool Database::Signup(QString fn, QString ln, QString u, QString p, QString e)
     signupQuery.bindValue(":pw", p);
 
     if(signupQuery.exec()) return true;
+    else return false;
+}
+
+bool Database::Update(QString fn, QString ln, QString u, QString p, QString e)
+{
+    QSqlQuery updateQuery(db);
+    updateQuery.prepare("UPDATE USER SET USERNAME=(:un), HO=(:fn), TEN=(:ln), EMAIL=(:em), PASSWORD=(:pw) WHERE USERNAME=(:un)");
+    updateQuery.bindValue(":un", u);
+    updateQuery.bindValue(":fn", fn);
+    updateQuery.bindValue(":ln", ln);
+    updateQuery.bindValue(":em", e);
+    updateQuery.bindValue(":pw", p);
+
+    if(updateQuery.exec()) return true;
     else return false;
 }

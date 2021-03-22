@@ -10,5 +10,6 @@
         <file>img/user.svg</file>
         <file>img/default-avatar.svg</file>
         <file>img/tasks.svg</file>
+        <file>img/repeat.svg</file>
     </qresource>
 </RCC>

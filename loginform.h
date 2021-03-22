@@ -31,6 +31,8 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_password_returnPressed();
+
 private:
     Ui::LoginForm *ui;
     Widget *main;

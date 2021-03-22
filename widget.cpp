@@ -5,12 +5,25 @@
 
 #include <QSqlRecord>
 
+Database dtbase;
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    QSqlQuery fetcher;
+    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
+    fetcher.bindValue(":un", LoginForm::getUsername());
+    fetcher.bindValue(":pw", LoginForm::getPassword());
+    fetcher.exec();
+
+    int iLN = fetcher.record().indexOf("TEN");
+
+    while(fetcher.next())
+    {
+        ui->showName->setText(fetcher.value(iLN).toString());
+    }
 }
 
 Widget::~Widget()
@@ -51,6 +64,7 @@ void Widget::on_btInfo_clicked()
 void Widget::on_btnUser_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+    ui->state->setText("");
 
     QSqlQuery fetcher;
     fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
@@ -75,4 +89,33 @@ void Widget::on_btnUser_clicked()
         ui->fullname->setText(full.append(" ").append(fetcher.value(iLN).toString()));
     }
 
+}
+
+void Widget::on_btnSave_clicked()
+{
+    QString fn = ui->fname->text();
+    QString ln = ui->lname->text() ;
+    QString un = ui->un->text();
+    QString pw = ui->pw->text();
+    QString em = ui->em->text();
+
+    if(fn == "") ui->state->setText("Please enter your first name!");
+
+    if(ln == "") ui->state->setText("Please enter your last name!");
+
+    if(un == "") ui->state->setText("Please enter your username!");
+
+    if(pw == "") ui->state->setText("Please enter your password!");
+
+    if(em == "") ui->state->setText("Please enter your email!");
+
+    else if(!em.contains("@",Qt::CaseInsensitive))
+            ui->state->setText("Please enter the right format of email!");
+
+    if(dtbase.Update(fn, ln, un, pw, em))
+    {
+        ui->state->setText("Your information has updated successfully!");
+        ui->fullname->setText(fn.append(" ").append(ln));
+        ui->showName->setText(ln);
+    } else ui->state->setText("Error!");
 }

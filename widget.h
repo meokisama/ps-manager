@@ -30,6 +30,8 @@ private slots:
 
     void on_btnUser_clicked();
 
+    void on_btnSave_clicked();
+
 private:
     Ui::Widget *ui;
 };

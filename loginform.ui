@@ -362,51 +362,6 @@ border-radius: 30px;</string>
        <string>Sign up to continue.</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="userName">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>220</y>
-        <width>151</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins Light</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
-      </property>
-      <property name="placeholderText">
-       <string>Enter username</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="passWord">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>220</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins Light</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Choose password</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
@@ -564,6 +519,72 @@ color: rgb(79, 84, 188);
        <string>Your first name</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lname">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>150</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Light</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
+      </property>
+      <property name="placeholderText">
+       <string>Last name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="userName">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>220</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Light</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter your username</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="passWord">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>220</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Light</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Choose password</string>
+      </property>
+     </widget>
      <widget class="QLineEdit" name="email">
       <property name="geometry">
        <rect>
@@ -583,27 +604,6 @@ color: rgb(79, 84, 188);
       </property>
       <property name="placeholderText">
        <string>What's your email ?</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lname">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>150</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins Light</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
-      </property>
-      <property name="placeholderText">
-       <string>And last name</string>
       </property>
      </widget>
     </widget>

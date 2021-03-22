@@ -591,7 +591,7 @@ border : 1px solid rgb(14, 188, 157);</string>
           <string>Email</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btnSave">
          <property name="geometry">
           <rect>
            <x>160</x>
@@ -642,6 +642,35 @@ color: white;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>50</y>
+           <width>24</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 12px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="img.qrc">
+           <normaloff>:/img/img/repeat.svg</normaloff>:/img/img/repeat.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
          </property>
         </widget>
        </widget>
@@ -931,9 +960,74 @@ border-radius: 35px;
         <normaloff>:/img/img/close.svg</normaloff>:/img/img/close.svg</iconset>
       </property>
      </widget>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>969</x>
+        <y>-1</y>
+        <width>231</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="showName">
+       <property name="geometry">
+        <rect>
+         <x>138</x>
+         <y>10</y>
+         <width>91</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>SFU Futura_07</family>
+         <pointsize>18</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(14, 188, 157);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="miniAVT">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>15</y>
+         <width>40</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="img.qrc">:/img/img/default-avatar.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
      <zorder>stackedWidget</zorder>
      <zorder>closeButton</zorder>
      <zorder>buttonbar</zorder>
+     <zorder>frame_7</zorder>
     </widget>
    </item>
   </layout>

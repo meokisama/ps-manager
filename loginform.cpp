@@ -119,3 +119,32 @@ QString LoginForm::getPassword()
 {
     return LoginForm::password;
 }
+
+void LoginForm::on_password_returnPressed()
+{
+    if (database.Login(ui->username->text(),ui->password->text()))
+    {
+        // Meaningless in this function but needed later
+        this->username = ui->username->text();
+        this->password = ui->password->text();
+
+        // Close LoginForm and open main window (ProjectManager)
+        close();
+        main = new Widget();
+        //Hide title bar
+        main->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+        //Make widget transparent
+        main->setAttribute(Qt::WA_TranslucentBackground);
+
+        // Add shadow effect
+        QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect();
+        effect->setXOffset(2);
+        effect->setYOffset(2);
+        effect->setBlurRadius(10);
+        effect->setColor(QColor(180, 180, 180, 180));
+        main->setGraphicsEffect(effect);
+
+        main->show();
+
+    } else ui->state->setText("Invalid credentials!");
+}
