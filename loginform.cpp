@@ -82,19 +82,19 @@ void LoginForm::on_pushButton_2_clicked()
 
     if(fn == "") ui->state_2->setText("Please enter your first name!");
 
-    if(ln == "") ui->state_2->setText("Please enter your last name!");
+    else if(ln == "") ui->state_2->setText("Please enter your last name!");
 
-    if(un == "") ui->state_2->setText("Please enter your username!");
+    else if(un == "") ui->state_2->setText("Please enter your username!");
 
-    if(pw == "") ui->state_2->setText("Please enter your password!");
+    else if(pw == "") ui->state_2->setText("Please enter your password!");
 
-    if(em == "") ui->state_2->setText("Please enter your email!");
+    else if(em == "") ui->state_2->setText("Please enter your email!");
 
     else if(!em.contains("@",Qt::CaseInsensitive))
             ui->state_2->setText("Please enter the right format of email!");
 
 
-    if(database.checkInfo(un, em) == 1) ui->state_2->setText("This username has been used!");
+    else if(database.checkInfo(un, em) == 1) ui->state_2->setText("This username has been used!");
 
     else if(database.checkInfo(un, em) == 2) ui->state_2->setText("This email has been used!");
 
@@ -130,6 +130,7 @@ void LoginForm::on_password_returnPressed()
 
         // Close LoginForm and open main window (ProjectManager)
         close();
+
         main = new Widget();
         //Hide title bar
         main->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
