@@ -12,15 +12,18 @@ SOURCES += \
     database.cpp \
     loginform.cpp \
     main.cpp \
+    project.cpp \
     widget.cpp
 
 HEADERS += \
     database.h \
     loginform.h \
+    project.h \
     widget.h
 
 FORMS += \
     loginform.ui \
+    project.ui \
     widget.ui
 
 TRANSLATIONS += \

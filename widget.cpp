@@ -2,8 +2,10 @@
 #include "ui_widget.h"
 #include "loginform.h"
 #include "database.h"
+#include "project.h"
 
 #include <QSqlRecord>
+#include <QMessageBox>
 
 Database dtbase;
 
@@ -101,21 +103,37 @@ void Widget::on_btnSave_clicked()
 
     if(fn == "") ui->state->setText("Please enter your first name!");
 
-    if(ln == "") ui->state->setText("Please enter your last name!");
+    else if(ln == "") ui->state->setText("Please enter your last name!");
 
-    if(un == "") ui->state->setText("Please enter your username!");
+    else if(un == "") ui->state->setText("Please enter your username!");
 
-    if(pw == "") ui->state->setText("Please enter your password!");
+    else if(pw == "") ui->state->setText("Please enter your password!");
 
-    if(em == "") ui->state->setText("Please enter your email!");
+    else if(em == "") ui->state->setText("Please enter your email!");
 
     else if(!em.contains("@",Qt::CaseInsensitive))
             ui->state->setText("Please enter the right format of email!");
 
-    if(dtbase.Update(fn, ln, un, pw, em))
+    else if(dtbase.Update(fn, ln, un, pw, em))
     {
         ui->state->setText("Your information has updated successfully!");
         ui->fullname->setText(fn.append(" ").append(ln));
         ui->showName->setText(ln);
     } else ui->state->setText("Error!");
+}
+
+void Widget::on_addProject_clicked()
+{
+    project *newp = new project();
+    h += 1;
+    if(h > 3) {
+        h = 1;
+        v += 1;
+        if(v > 2) {
+            QMessageBox::information(this, tr("  Rất tiếc"), tr("\nHiện tại, ứng dụng chỉ hỗ trợ chừng này projects.\t\n"), QMessageBox::Ok);
+            delete newp;
+            return;
+        }
+    }
+    ui->gridLayout->addWidget(newp,v,h,Qt::Alignment());
 }

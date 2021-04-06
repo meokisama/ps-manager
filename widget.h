@@ -32,7 +32,10 @@ private slots:
 
     void on_btnSave_clicked();
 
+    void on_addProject_clicked();
+
 private:
     Ui::Widget *ui;
+    int h = 0 , v = 1;
 };
 #endif // WIDGET_H

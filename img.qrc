@@ -1,15 +1,18 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>img/workplace.jpg</file>
-        <file>img/close.svg</file>
-        <file>img/home.svg</file>
-        <file>img/chat.svg</file>
-        <file>img/calendar.svg</file>
-        <file>img/video-camera.svg</file>
-        <file>img/information.svg</file>
-        <file>img/user.svg</file>
-        <file>img/default-avatar.svg</file>
-        <file>img/tasks.svg</file>
-        <file>img/repeat.svg</file>
-    </qresource>
+  <qresource prefix="/img">
+    <file>img/about.png</file>
+    <file>img/workplace.jpg</file>
+    <file>img/close.svg</file>
+    <file>img/home.svg</file>
+    <file>img/chat.svg</file>
+    <file>img/calendar.svg</file>
+    <file>img/video-camera.svg</file>
+    <file>img/information.svg</file>
+    <file>img/user.svg</file>
+    <file>img/default-avatar.svg</file>
+    <file>img/tasks.svg</file>
+    <file>img/repeat.svg</file>
+    <file>img/paper-plane.svg</file>
+    <file>img/pencil.svg</file>
+  </qresource>
 </RCC>
