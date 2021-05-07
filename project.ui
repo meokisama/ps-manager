@@ -48,7 +48,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Bài tập Mật mã học</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -58,7 +58,7 @@
     <property name="geometry">
      <rect>
       <x>12</x>
-      <y>196</y>
+      <y>10</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -103,6 +103,90 @@
       <width>30</width>
       <height>30</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>255</x>
+      <y>12</y>
+      <width>12</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgb(255, 65, 78);
+color: rgb(255, 255, 255);
+border-radius: 6px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dayleft">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>101</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poppins SemiBold</family>
+      <pointsize>9</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>133</y>
+      <width>191</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Poppins</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar {
+border-radius: 5px;
+text-align: center;
+border-style: none;
+background-color: rgb(255, 255, 255);
+}
+
+QProgressBar::chunk {
+border-radius: 5px;
+	background-color: rgb(255, 85, 0);
+}</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

@@ -26,6 +26,8 @@ Widget::Widget(QWidget *parent)
     {
         ui->showName->setText(fetcher.value(iLN).toString());
     }
+    ui->addp->setVisible(false);
+    ui->dateEdit->setDate(QDate::currentDate());
 }
 
 Widget::~Widget()
@@ -124,16 +126,32 @@ void Widget::on_btnSave_clicked()
 
 void Widget::on_addProject_clicked()
 {
+    ui->addp->setVisible(true);
+}
+
+void Widget::on_btnCreate_clicked()
+{
     project *newp = new project();
+    newp->setValue(ui->pname->text(),ui->dateEdit->date());
     h += 1;
     if(h > 3) {
         h = 1;
         v += 1;
         if(v > 2) {
+            v = 1;
             QMessageBox::information(this, tr("  Rất tiếc"), tr("\nHiện tại, ứng dụng chỉ hỗ trợ chừng này projects.\t\n"), QMessageBox::Ok);
             delete newp;
             return;
         }
     }
-    ui->gridLayout->addWidget(newp,v,h,Qt::Alignment());
+    if(ui->pname->text() != "") {
+        ui->gridLayout->addWidget(newp,v,h,Qt::Alignment());
+        ui->addp->setVisible(false);
+        ui->pname->clear();
+    } else ui->state_2->setText("Enter project's name");
+}
+
+void Widget::on_btnCancel_clicked()
+{
+    ui->addp->setVisible(false);
 }

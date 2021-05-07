@@ -88,7 +88,6 @@ border-radius: 30px;</string>
        <font>
         <family>Poppins SemiBold</family>
         <pointsize>20</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -136,7 +135,7 @@ border-radius: 30px;</string>
        <string notr="true">border-bottom: 2px solid rgb(93, 99, 221);</string>
       </property>
       <property name="placeholderText">
-       <string>Enter username or email</string>
+       <string>Enter username</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="password">
@@ -225,7 +224,6 @@ background-color: rgb(79, 84, 188);
       <property name="font">
        <font>
         <family>Poppins SemiBold</family>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -256,7 +254,6 @@ color: rgb(79, 84, 188);
       <property name="font">
        <font>
         <family>Poppins Black</family>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -336,7 +333,6 @@ border-radius: 30px;</string>
        <font>
         <family>Poppins SemiBold</family>
         <pointsize>20</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -428,7 +424,6 @@ background-color: rgb(79, 84, 188);
       <property name="font">
        <font>
         <family>Poppins SemiBold</family>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -459,7 +454,6 @@ color: rgb(79, 84, 188);
       <property name="font">
        <font>
         <family>Poppins Black</family>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>

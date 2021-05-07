@@ -34,6 +34,10 @@ private slots:
 
     void on_addProject_clicked();
 
+    void on_btnCreate_clicked();
+
+    void on_btnCancel_clicked();
+
 private:
     Ui::Widget *ui;
     int h = 0 , v = 1;

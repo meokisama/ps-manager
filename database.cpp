@@ -33,13 +33,17 @@ QSqlQuery Query(QString q)
 void Database::initialQuery()
 {
     QSqlQuery createUSER(db);
-    createUSER.prepare("CREATE TABLE IF NOT EXISTS USER (USERNAME TEXT UNIQUE, HO TEXT, TEN TEXT, EMAIL TEXT UNIQUE, PASSWORD TXT)");
+    createUSER.prepare("CREATE TABLE IF NOT EXISTS USER (USERNAME TEXT UNIQUE, HO TEXT, TEN TEXT, EMAIL TEXT, PASSWORD TXT)");
     if(createUSER.exec())
     {
         QSqlQuery firstUser(db);
         firstUser.prepare("INSERT INTO USER VALUES ('meokisama', 'Hoàng Đình', 'Sáng', 'hi@meoki.net', '1082001')");
         firstUser.exec();
     }
+
+    QSqlQuery createPROJECTS(db);
+    createPROJECTS.prepare("CREATE TABLE projects (name	TEXT NOT NULL,	startdate INTEGER NOT NULL,	findate	INTEGER NOT NULL)");
+    createPROJECTS.exec();
 }
 
 bool Database::Login(QString u, QString p)
@@ -67,23 +71,14 @@ bool Database::Login(QString u, QString p)
     return exist;
 }
 
-int Database::checkInfo(QString u, QString e)
+bool Database::checkInfo(QString u)
 {
-    int checker = 0;
-
-    // Check if username is used
     QSqlQuery uQuery(db);
     uQuery.prepare("SELECT USERNAME FROM USER WHERE USERNAME = (:un)");
     uQuery.bindValue(":un", u);
-    if(uQuery.exec()) if(uQuery.next()) checker = 1;
+    if(uQuery.exec()) if(uQuery.next()) return true;
 
-    // Check if email is used
-    QSqlQuery eQuery(db);
-    eQuery.prepare("SELECT EMAIL FROM USER WHERE EMAIL = (:em)");
-    eQuery.bindValue(":em", e);
-    if(eQuery.exec()) if(uQuery.next()) checker = 2;
-
-    return checker;
+    return false;
 }
 
 bool Database::Signup(QString fn, QString ln, QString u, QString p, QString e)

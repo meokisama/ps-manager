@@ -90,24 +90,20 @@ void LoginForm::on_pushButton_2_clicked()
 
     else if(em == "") ui->state_2->setText("Please enter your email!");
 
-    else if(!em.contains("@",Qt::CaseInsensitive))
-            ui->state_2->setText("Please enter the right format of email!");
+    else if(!em.contains("@",Qt::CaseInsensitive)) ui->state_2->setText("Please enter the right format of email!");
 
+    else if(database.checkInfo(un)) ui->state_2->setText("This username has been used!");
 
-    else if(database.checkInfo(un, em) == 1) ui->state_2->setText("This username has been used!");
-
-    else if(database.checkInfo(un, em) == 2) ui->state_2->setText("This email has been used!");
-
-         else if(database.Signup(fn, ln, un, pw, em))
-              {
-                ui->stackedWidget->setCurrentIndex(0);
-                ui->state->setText("Sign up seccessfully! You can now login.");
-                ui->fname->setText("");
-                ui->lname->setText("");
-                ui->passWord->setText("");
-                ui->userName->setText("");
-                ui->email->setText("");
-              } else ui->state_2->setText("Error!");
+    else if(database.Signup(fn, ln, un, pw, em))
+            {
+              ui->stackedWidget->setCurrentIndex(0);
+              ui->state->setText("Sign up seccessfully! You can now login.");
+              ui->fname->clear();
+              ui->lname->clear();
+              ui->passWord->clear();
+              ui->userName->clear();
+              ui->email->clear();
+            } else ui->state_2->setText("Error!");
 }
 
 QString LoginForm::getUsername()

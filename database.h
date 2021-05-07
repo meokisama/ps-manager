@@ -13,13 +13,13 @@ class Database
 public:
     Database();
     bool connectDB();
-    bool Login(QString u, QString p);
+    bool Login(QString, QString);
     void disConnectDB();
-    QSqlQuery Query(QString q);
-    int checkInfo(QString u, QString e);
-    bool Signup(QString fn, QString ln, QString u, QString p, QString e);
+    QSqlQuery Query(QString);
+    bool checkInfo(QString);
+    bool Signup(QString, QString, QString, QString, QString);
     void initialQuery();
-    bool Update(QString fn, QString ln, QString u, QString p, QString e);
+    bool Update(QString, QString, QString, QString, QString);
 private:
     static QSqlDatabase db;
 };
