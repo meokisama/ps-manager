@@ -43,3 +43,11 @@ void project::setValue(QString a, QDate b)
         ui->dayleft->setText(QString::number(getDate(b)) + " days left");
     else ui->dayleft->setText("Overdue");
 }
+
+void project::fetchValue(QString a, int b)
+{
+    ui->label->setText(a);
+    if(b >= 0)
+        ui->dayleft->setText(QString::number(b) + " days left");
+    else ui->dayleft->setText("Overdue");
+}

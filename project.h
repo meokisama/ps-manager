@@ -17,6 +17,7 @@ public:
     int getDate(QDate);
     void Style();
     void setValue(QString, QDate);
+    void fetchValue(QString, int);
 
 private slots:
     void on_pushButton_clicked();

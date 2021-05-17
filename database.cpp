@@ -108,3 +108,14 @@ bool Database::Update(QString fn, QString ln, QString u, QString p, QString e)
     if(updateQuery.exec()) return true;
     else return false;
 }
+
+void Database::addProject(QString pn, int ps, int pf)
+{
+    QSqlQuery insertQuery(db);
+    insertQuery.prepare("INSERT INTO projects VALUES(:pn, :ps, :pf)");
+    insertQuery.bindValue(":pn", pn);
+    insertQuery.bindValue(":ps", ps);
+    insertQuery.bindValue(":pf", pf);
+
+    insertQuery.exec();
+}

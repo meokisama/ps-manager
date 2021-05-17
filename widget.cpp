@@ -14,6 +14,9 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    fetchProject();
+    v = ui->gridLayout->rowCount();
+    h = ui->gridLayout->columnCount();
     QSqlQuery fetcher;
     fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
     fetcher.bindValue(":un", LoginForm::getUsername());
@@ -131,6 +134,15 @@ void Widget::on_addProject_clicked()
 
 void Widget::on_btnCreate_clicked()
 {
+
+    if (ui->gridLayout->count() == 0) {v=1; h=0;}
+    else if (ui->gridLayout->count() == 1){v=1; h=1;}
+    else if (ui->gridLayout->count() == 2){v=1; h=2;}
+    else if (ui->gridLayout->count() == 3){v=1; h=3;}
+    else if (ui->gridLayout->count() == 4){v=2; h=1;}
+    else if (ui->gridLayout->count() == 5){v=2; h=2;}
+    else if (ui->gridLayout->count() == 6){v=2; h=3;}
+
     project *newp = new project();
     newp->setValue(ui->pname->text(),ui->dateEdit->date());
     h += 1;
@@ -145,13 +157,45 @@ void Widget::on_btnCreate_clicked()
         }
     }
     if(ui->pname->text() != "") {
+        QDate a;
+        dtbase.addProject(ui->pname->text(), a.currentDate().toJulianDay(), ui->dateEdit->date().toJulianDay());
         ui->gridLayout->addWidget(newp,v,h,Qt::Alignment());
         ui->addp->setVisible(false);
         ui->pname->clear();
     } else ui->state_2->setText("Enter project's name");
+
 }
 
 void Widget::on_btnCancel_clicked()
 {
     ui->addp->setVisible(false);
+}
+
+void Widget::fetchProject()
+{
+    QSqlQuery fetcher;
+    fetcher.prepare("SELECT * FROM projects");
+
+    fetcher.exec();
+
+    int iN = fetcher.record().indexOf("name");
+    int iS = fetcher.record().indexOf("startdate");
+    int iF = fetcher.record().indexOf("findate");
+
+    int v1 = 1, h1 = 0;
+
+    while(fetcher.next())
+    {
+        project *newp = new project();
+        newp->fetchValue(fetcher.value(iN).toString(), fetcher.value(iF).toInt() - fetcher.value(iS).toInt());
+        h1 += 1;
+        if(h1 > 3) {
+            h1 = 1;
+            v1 += 1;
+            if(v1 > 2) {
+                v1 = 1;
+            }
+        }
+        ui->gridLayout->addWidget(newp,v1, h1,Qt::Alignment());
+    }
 }

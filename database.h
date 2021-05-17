@@ -20,6 +20,7 @@ public:
     bool Signup(QString, QString, QString, QString, QString);
     void initialQuery();
     bool Update(QString, QString, QString, QString, QString);
+    void addProject(QString, int, int);
 private:
     static QSqlDatabase db;
 };

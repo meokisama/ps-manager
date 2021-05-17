@@ -14,6 +14,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    void fetchProject();
 
 private slots:
     void on_closeButton_clicked();
