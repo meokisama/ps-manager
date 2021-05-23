@@ -15,6 +15,7 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     void fetchProject();
+    void resetProject();
 
 private slots:
     void on_closeButton_clicked();

@@ -1,5 +1,7 @@
 #include "database.h"
 
+#include <QSqlRecord>
+
 Database::Database() {}
 
 QSqlDatabase Database::db;
@@ -42,7 +44,7 @@ void Database::initialQuery()
     }
 
     QSqlQuery createPROJECTS(db);
-    createPROJECTS.prepare("CREATE TABLE projects (name	TEXT NOT NULL,	startdate INTEGER NOT NULL,	findate	INTEGER NOT NULL)");
+    createPROJECTS.prepare("CREATE TABLE projects (id INTEGER NOT NULL, name TEXT NOT NULL,	startdate INTEGER NOT NULL,	findate	INTEGER NOT NULL)");
     createPROJECTS.exec();
 }
 
@@ -109,13 +111,34 @@ bool Database::Update(QString fn, QString ln, QString u, QString p, QString e)
     else return false;
 }
 
-void Database::addProject(QString pn, int ps, int pf)
+void Database::addProject(QString id, QString pn, int ps, int pf)
 {
     QSqlQuery insertQuery(db);
-    insertQuery.prepare("INSERT INTO projects VALUES(:pn, :ps, :pf)");
+    insertQuery.prepare("INSERT INTO projects VALUES(:id, :pn, :ps, :pf)");
+    insertQuery.bindValue(":id", id);
     insertQuery.bindValue(":pn", pn);
     insertQuery.bindValue(":ps", ps);
     insertQuery.bindValue(":pf", pf);
 
     insertQuery.exec();
+}
+
+void Database::delProject(QString id)
+{
+    QSqlQuery deleteQuery(db);
+    deleteQuery.prepare("DELETE FROM projects WHERE id=(:id)");
+    deleteQuery.bindValue(":id", id);
+
+    deleteQuery.exec();
+}
+
+int Database::findMaxID()
+{
+    QSqlQuery maxQuery(db);
+    maxQuery.prepare("SELECT MAX(id) AS maxid FROM projects");
+    maxQuery.exec();
+    int maxID;
+    int ID = maxQuery.record().indexOf("maxid");
+    maxID = maxQuery.value(ID).toInt();
+    return maxID;
 }

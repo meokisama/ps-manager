@@ -46,6 +46,8 @@ void Widget::on_closeButton_clicked()
 void Widget::on_btnHome_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    resetProject();
+    fetchProject();
 }
 
 void Widget::on_btnLiveChat_clicked()
@@ -134,7 +136,8 @@ void Widget::on_addProject_clicked()
 
 void Widget::on_btnCreate_clicked()
 {
-
+    resetProject();
+    fetchProject();
     if (ui->gridLayout->count() == 0) {v=1; h=0;}
     else if (ui->gridLayout->count() == 1){v=1; h=1;}
     else if (ui->gridLayout->count() == 2){v=1; h=2;}
@@ -158,7 +161,7 @@ void Widget::on_btnCreate_clicked()
     }
     if(ui->pname->text() != "") {
         QDate a;
-        dtbase.addProject(ui->pname->text(), a.currentDate().toJulianDay(), ui->dateEdit->date().toJulianDay());
+        dtbase.addProject(newp->id, ui->pname->text(), a.currentDate().toJulianDay(), ui->dateEdit->date().toJulianDay());
         ui->gridLayout->addWidget(newp,v,h,Qt::Alignment());
         ui->addp->setVisible(false);
         ui->pname->clear();
@@ -178,6 +181,7 @@ void Widget::fetchProject()
 
     fetcher.exec();
 
+    int iD = fetcher.record().indexOf("id");
     int iN = fetcher.record().indexOf("name");
     int iS = fetcher.record().indexOf("startdate");
     int iF = fetcher.record().indexOf("findate");
@@ -187,7 +191,8 @@ void Widget::fetchProject()
     while(fetcher.next())
     {
         project *newp = new project();
-        newp->fetchValue(fetcher.value(iN).toString(), fetcher.value(iF).toInt() - fetcher.value(iS).toInt());
+        newp->id = fetcher.value(iD).toString();
+        newp->fetchValue(fetcher.value(iS).toInt(), fetcher.value(iN).toString(), fetcher.value(iF).toInt() - fetcher.value(iS).toInt());
         h1 += 1;
         if(h1 > 3) {
             h1 = 1;
@@ -197,5 +202,17 @@ void Widget::fetchProject()
             }
         }
         ui->gridLayout->addWidget(newp,v1, h1,Qt::Alignment());
+    }
+}
+
+void Widget::resetProject()
+{
+    while (ui->gridLayout->count())
+    {
+        QLayoutItem* item = ui->gridLayout->itemAt(0);
+        ui->gridLayout->removeItem(item);
+
+        QWidget* widget = item->widget();
+        if(widget) delete widget;
     }
 }

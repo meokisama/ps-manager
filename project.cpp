@@ -1,8 +1,12 @@
 #include "project.h"
 #include "ui_project.h"
+#include "database.h"
 
 #include <QRandomGenerator>
 #include <QDate>
+#include <QDateTime>
+
+Database dbase;
 
 project::project(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +14,8 @@ project::project(QWidget *parent) :
 {
     ui->setupUi(this);
     Style();
+    QDateTime setID;
+    this->id = QString::number(setID.currentSecsSinceEpoch());
 }
 
 project::~project()
@@ -34,6 +40,7 @@ void project::Style()
 void project::on_pushButton_clicked()
 {
     close();
+    dbase.delProject(this->id);
 }
 
 void project::setValue(QString a, QDate b)
@@ -44,10 +51,12 @@ void project::setValue(QString a, QDate b)
     else ui->dayleft->setText("Overdue");
 }
 
-void project::fetchValue(QString a, int b)
+void project::fetchValue(int d, QString a, int b)
 {
     ui->label->setText(a);
     if(b >= 0)
         ui->dayleft->setText(QString::number(b) + " days left");
     else ui->dayleft->setText("Overdue");
+    QDate date = QDate::fromJulianDay(d);
+    ui->date->setText(date.toString(Qt::RFC2822Date));
 }

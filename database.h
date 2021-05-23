@@ -20,7 +20,9 @@ public:
     bool Signup(QString, QString, QString, QString, QString);
     void initialQuery();
     bool Update(QString, QString, QString, QString, QString);
-    void addProject(QString, int, int);
+    void addProject(QString, QString, int, int);
+    void delProject(QString);
+    int findMaxID();
 private:
     static QSqlDatabase db;
 };
