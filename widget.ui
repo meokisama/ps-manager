@@ -88,6 +88,7 @@ border-radius: 30px;}</string>
          <property name="font">
           <font>
            <family>Poppins SemiBold</family>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -117,6 +118,7 @@ color: rgb(255, 255, 255);</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -213,6 +215,7 @@ border-radius: 5px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -261,6 +264,7 @@ border-radius: 30px;}</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>10</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -315,6 +319,7 @@ border-radius: 30px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -384,6 +389,7 @@ border-radius: 30px;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>12</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -413,6 +419,7 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -480,6 +487,7 @@ border-radius: 30px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -552,6 +560,7 @@ border-radius: 30px;</string>
           <font>
            <family>SFU Futura_07</family>
            <pointsize>18</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -815,6 +824,7 @@ color: white;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>10</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -871,6 +881,7 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1142,6 +1153,7 @@ border-radius: 35px;
       <property name="font">
        <font>
         <family>Poppins Black</family>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1193,6 +1205,7 @@ border-radius: 35px;
         <font>
          <family>SFU Futura_07</family>
          <pointsize>18</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1257,6 +1270,7 @@ border-radius: 30px;
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>26</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1330,7 +1344,7 @@ border-radius: 30px;
         </font>
        </property>
        <property name="text">
-        <string>Finish date</string>
+        <string>Deadline</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnCreate">
@@ -1435,6 +1449,7 @@ color: white;</string>
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>10</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>

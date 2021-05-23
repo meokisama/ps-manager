@@ -6,6 +6,8 @@
 
 #include <QSqlRecord>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QDesktopServices>
 
 Database dtbase;
 
@@ -213,4 +215,14 @@ void Widget::resetProject()
         QWidget* widget = item->widget();
         if(widget) delete widget;
     }
+}
+
+void Widget::on_pushButton_2_clicked()
+{
+    QFileDialog::getOpenFileName(this, "Choose file", QDir::currentPath(), "All files (*.*) ;; Document (*.doc *.rtf);; Image (*.png *.jpg)");
+}
+
+void Widget::on_pushButton_3_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://meoki.net"));
 }

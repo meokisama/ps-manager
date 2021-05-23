@@ -5,6 +5,7 @@
 #include <QRandomGenerator>
 #include <QDate>
 #include <QDateTime>
+#include <QGraphicsDropShadowEffect>
 
 Database dbase;
 
@@ -59,4 +60,22 @@ void project::fetchValue(int d, QString a, int b)
     else ui->dayleft->setText("Overdue");
     QDate date = QDate::fromJulianDay(d);
     ui->date->setText(date.toString(Qt::RFC2822Date));
+}
+
+void project::on_btnEdit_clicked()
+{
+    task = new Task();
+    task->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    //Make widget transparent
+    task->setAttribute(Qt::WA_TranslucentBackground);
+
+    // Add shadow effect
+    QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect();
+    effect->setXOffset(2);
+    effect->setYOffset(2);
+    effect->setBlurRadius(10);
+    effect->setColor(QColor(180, 180, 180, 180));
+    task->setGraphicsEffect(effect);
+
+    task->show();
 }
