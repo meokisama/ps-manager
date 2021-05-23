@@ -18,9 +18,8 @@ Widget::Widget(QWidget *parent)
     v = ui->gridLayout->rowCount();
     h = ui->gridLayout->columnCount();
     QSqlQuery fetcher;
-    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
+    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un)");
     fetcher.bindValue(":un", LoginForm::getUsername());
-    fetcher.bindValue(":pw", LoginForm::getPassword());
     fetcher.exec();
 
     int iLN = fetcher.record().indexOf("TEN");
@@ -76,9 +75,8 @@ void Widget::on_btnUser_clicked()
     ui->state->setText("");
 
     QSqlQuery fetcher;
-    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un) AND PASSWORD = (:pw)");
+    fetcher.prepare("SELECT * FROM USER WHERE USERNAME = (:un)");
     fetcher.bindValue(":un", LoginForm::getUsername());
-    fetcher.bindValue(":pw", LoginForm::getPassword());
     fetcher.exec();
 
     int iUN = fetcher.record().indexOf("USERNAME");

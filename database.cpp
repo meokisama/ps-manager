@@ -1,6 +1,7 @@
 #include "database.h"
 
 #include <QSqlRecord>
+#include <QCryptographicHash>
 
 Database::Database() {}
 
@@ -39,7 +40,9 @@ void Database::initialQuery()
     if(createUSER.exec())
     {
         QSqlQuery firstUser(db);
-        firstUser.prepare("INSERT INTO USER VALUES ('meokisama', 'Hoàng Đình', 'Sáng', 'hi@meoki.net', '1082001')");
+        QString pw = "1082001";
+        firstUser.prepare("INSERT INTO USER VALUES ('meokisama', 'Hoàng Đình', 'Sáng', 'hi@meoki.net', :pw)");
+        firstUser.bindValue(":pw", QString(QCryptographicHash::hash(pw.toLocal8Bit(), QCryptographicHash::Md5)));
         firstUser.exec();
     }
 

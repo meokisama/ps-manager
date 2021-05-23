@@ -3,6 +3,7 @@
 #include "database.h"
 
 #include <QGraphicsDropShadowEffect>
+#include <QCryptographicHash>
 
 Database database;
 
@@ -24,7 +25,7 @@ QString LoginForm::password;
 
 void LoginForm::on_pushButton_clicked()
 {
-    if (database.Login(ui->username->text(),ui->password->text()))
+    if (database.Login(ui->username->text(),getHash(ui->password->text())))
     {
         // Meaningless in this function but needed later
         this->username = ui->username->text();
@@ -72,6 +73,12 @@ void LoginForm::on_closeButton_2_clicked()
     close();
 }
 
+QString LoginForm::getHash(QString plaintext)
+{
+    QByteArray hash = QCryptographicHash::hash(plaintext.toLocal8Bit(), QCryptographicHash::Md5);
+    return QString(hash);
+}
+
 void LoginForm::on_pushButton_2_clicked()
 {
     QString fn = ui->fname->text();
@@ -94,7 +101,7 @@ void LoginForm::on_pushButton_2_clicked()
 
     else if(database.checkInfo(un)) ui->state_2->setText("This username has been used!");
 
-    else if(database.Signup(fn, ln, un, pw, em))
+    else if(database.Signup(fn, ln, un, getHash(pw), em))
             {
               ui->stackedWidget->setCurrentIndex(0);
               ui->state->setText("Sign up seccessfully! You can now login.");
@@ -118,7 +125,7 @@ QString LoginForm::getPassword()
 
 void LoginForm::on_password_returnPressed()
 {
-    if (database.Login(ui->username->text(),ui->password->text()))
+    if (database.Login(ui->username->text(),getHash(ui->password->text())))
     {
         // Meaningless in this function but needed later
         this->username = ui->username->text();

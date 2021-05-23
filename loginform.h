@@ -38,6 +38,7 @@ private:
     Widget *main;
     static QString username;
     static QString password;
+    QString getHash(QString);
 };
 
 #endif // LOGINFORM_H
