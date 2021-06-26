@@ -49,6 +49,10 @@ void Database::initialQuery()
     QSqlQuery createPROJECTS(db);
     createPROJECTS.prepare("CREATE TABLE projects (id INTEGER NOT NULL, name TEXT NOT NULL,	startdate INTEGER NOT NULL,	findate	INTEGER NOT NULL)");
     createPROJECTS.exec();
+
+    QSqlQuery createTASKS(db);
+    createTASKS.prepare("CREATE TABLE tasks (id INTEGER NOT NULL, name TEXT NOT NULL, state INTEGER NOT NULL)");
+    createTASKS.exec();
 }
 
 bool Database::Login(QString u, QString p)
@@ -131,8 +135,12 @@ void Database::delProject(QString id)
     QSqlQuery deleteQuery(db);
     deleteQuery.prepare("DELETE FROM projects WHERE id=(:id)");
     deleteQuery.bindValue(":id", id);
-
     deleteQuery.exec();
+
+    QSqlQuery deleteT(db);
+    deleteT.prepare("DELETE FROM tasks WHERE id=(:id)");
+    deleteT.bindValue(":id", id);
+    deleteT.exec();
 }
 
 int Database::findMaxID()
@@ -144,4 +152,51 @@ int Database::findMaxID()
     int ID = maxQuery.record().indexOf("maxid");
     maxID = maxQuery.value(ID).toInt();
     return maxID;
+}
+
+QString Database::fetchName(QString id)
+{
+    QSqlQuery fetch(db);
+    fetch.prepare("SELECT name FROM projects WHERE id=(:id)");
+    fetch.bindValue(":id", id);
+    fetch.exec();
+    QString nm;
+    int iN = fetch.record().indexOf("name");
+    while (fetch.next()) {
+        nm = fetch.value(iN).toString();
+    }
+    return nm;
+}
+
+void Database::addTasks(QString id, QString nm, QString st)
+{
+    QSqlQuery insertQuery(db);
+    insertQuery.prepare("INSERT INTO tasks VALUES(:id, :nm, :st)");
+    insertQuery.bindValue(":id", id);
+    insertQuery.bindValue(":nm", nm);
+    insertQuery.bindValue(":st", st);
+
+    insertQuery.exec();
+}
+
+void Database::updateTasks(QString id, QString nm, QString st)
+{
+    QSqlQuery updateQuery(db);
+    updateQuery.prepare("UPDATE tasks SET state=(:st) WHERE id=(:id) AND name=(:nm)");
+    updateQuery.bindValue(":st", st);
+    updateQuery.bindValue(":nm", nm);
+    updateQuery.bindValue(":id", id);
+
+    updateQuery.exec();
+
+}
+
+void Database::deleteTasks(QString id, QString nm)
+{
+    QSqlQuery deleteQuery(db);
+    deleteQuery.prepare("DELETE FROM tasks WHERE id=(:id) AND name=(:nm)");
+    deleteQuery.bindValue(":id", id);
+    deleteQuery.bindValue(":nm", nm);
+
+    deleteQuery.exec();
 }

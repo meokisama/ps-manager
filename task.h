@@ -13,7 +13,9 @@ class Task : public QWidget
 
 public:
     explicit Task(QWidget *parent = nullptr);
+    Task(QString);
     ~Task();
+    QString id;
 
 private slots:
     void on_closeButton_clicked();
@@ -31,6 +33,18 @@ private slots:
     void on_checkBox_5_stateChanged(int arg1);
 
     void on_checkBox_6_stateChanged(int arg1);
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::Task *ui;

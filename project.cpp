@@ -64,7 +64,7 @@ void project::fetchValue(int d, QString a, int b)
 
 void project::on_btnEdit_clicked()
 {
-    task = new Task();
+    task = new Task(this->id);
     task->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     //Make widget transparent
     task->setAttribute(Qt::WA_TranslucentBackground);

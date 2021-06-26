@@ -88,7 +88,6 @@ border-radius: 30px;}</string>
          <property name="font">
           <font>
            <family>Poppins SemiBold</family>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -118,7 +117,6 @@ color: rgb(255, 255, 255);</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -201,6 +199,51 @@ border-radius: 5px;</string>
           <string>  Enter your message here...</string>
          </property>
         </widget>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>381</width>
+           <height>521</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid rgb(14, 188, 157);</string>
+         </property>
+        </widget>
+        <widget class="QListWidget" name="listWidget">
+         <property name="geometry">
+          <rect>
+           <x>419</x>
+           <y>20</y>
+           <width>201</width>
+           <height>521</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid rgb(14, 188, 157);</string>
+         </property>
+        </widget>
        </widget>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
@@ -215,7 +258,6 @@ border-radius: 5px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -264,7 +306,6 @@ border-radius: 30px;}</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>10</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -319,7 +360,6 @@ border-radius: 30px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -389,7 +429,6 @@ border-radius: 30px;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>12</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -419,7 +458,6 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -487,7 +525,6 @@ border-radius: 30px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -560,7 +597,6 @@ border-radius: 30px;</string>
           <font>
            <family>SFU Futura_07</family>
            <pointsize>18</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -824,7 +860,6 @@ color: white;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>10</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -881,7 +916,6 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -896,6 +930,26 @@ color: white;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_8">
+        <property name="geometry">
+         <rect>
+          <x>439</x>
+          <y>60</y>
+          <width>611</width>
+          <height>621</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 30px;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -1153,7 +1207,6 @@ border-radius: 35px;
       <property name="font">
        <font>
         <family>Poppins Black</family>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -1205,7 +1258,6 @@ border-radius: 35px;
         <font>
          <family>SFU Futura_07</family>
          <pointsize>18</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1270,7 +1322,6 @@ border-radius: 30px;
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>26</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1449,7 +1500,6 @@ color: white;</string>
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1464,11 +1514,11 @@ color: white;</string>
        </property>
       </widget>
      </widget>
+     <zorder>addp</zorder>
      <zorder>stackedWidget</zorder>
      <zorder>closeButton</zorder>
      <zorder>buttonbar</zorder>
      <zorder>frame_7</zorder>
-     <zorder>addp</zorder>
     </widget>
    </item>
   </layout>
