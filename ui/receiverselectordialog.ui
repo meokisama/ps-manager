@@ -32,7 +32,7 @@
    <string>Select Receiver</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../res.qrc">
+   <iconset>
     <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -67,8 +67,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../res.qrc">
-         <normaloff>:/img/refresh.png</normaloff>:/img/refresh.png</iconset>
+        <iconset resource="../img.qrc">
+         <normaloff>:/img/img/refresh.png</normaloff>:/img/img/refresh.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -145,7 +145,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../res.qrc"/>
+  <include location="../img.qrc"/>
  </resources>
  <connections>
   <connection>

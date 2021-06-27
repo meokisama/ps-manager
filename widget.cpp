@@ -287,12 +287,7 @@ void Widget::resetProject()
     }
 }
 
-void Widget::on_pushButton_2_clicked()
-{
-    QFileDialog::getOpenFileName(this, "Choose file", QDir::currentPath(), "All files (*.*) ;; Document (*.doc *.rtf);; Image (*.png *.jpg)");
-}
-
-void Widget::on_pushButton_3_clicked()
+void Widget::on_makeCallBtn_clicked()
 {
     //QDesktopServices::openUrl(QUrl("https://meoki.herokuapp.com/join/Meoki"));
     QDesktopServices::openUrl(QUrl("http://localhost:3000"));
@@ -864,13 +859,13 @@ void Widget::setupToolbar()
 
 void Widget::setupActions()
 {
-    mSendFilesAction = new QAction(QIcon(":/img/file.png"), tr("Send files..."), this);
+    mSendFilesAction = new QAction(QIcon(":/img/img/file.png"), tr("Send files..."), this);
     connect(mSendFilesAction, &QAction::triggered, this, &Widget::onSendFilesActionTriggered);
-    mSendFolderAction = new QAction(QIcon(":/img/folder.png"), tr("Send folders..."), this);
+    mSendFolderAction = new QAction(QIcon(":/img/img/folder.png"), tr("Send folders..."), this);
     connect(mSendFolderAction, &QAction::triggered, this, &Widget::onSendFolderActionTriggered);
-    mSettingsAction = new QAction(QIcon(":/img/settings.png"), tr("Settings"), this);
+    mSettingsAction = new QAction(QIcon(":/img/img/settings.png"), tr("Settings"), this);
     connect(mSettingsAction, &QAction::triggered, this, &Widget::onSettingsActionTriggered);
-    mAboutAction = new QAction(QIcon(":/img/about.png"), tr("About"), this);
+    mAboutAction = new QAction(QIcon(":/img/img/about.png"), tr("About"), this);
     mAboutAction->setMenuRole(QAction::AboutRole);
     connect(mAboutAction, &QAction::triggered, this, &Widget::onAboutActionTriggered);
     mAboutQtAction = new QAction(tr("About Qt"), this);
@@ -881,31 +876,31 @@ void Widget::setupActions()
     connect(mSenderOpenAction, &QAction::triggered, this, &Widget::openSenderFileInCurrentIndex);
     mSenderOpenFolderAction = new QAction(tr("Open folder"), this);
     connect(mSenderOpenFolderAction, &QAction::triggered, this, &Widget::openSenderFolderInCurrentIndex);
-    mSenderRemoveAction = new QAction(QIcon(":/img/remove.png"), tr("Remove"), this);
+    mSenderRemoveAction = new QAction(QIcon(":/img/img/remove.png"), tr("Remove"), this);
     connect(mSenderRemoveAction, &QAction::triggered, this, &Widget::removeSenderItemInCurrentIndex);
-    mSenderClearAction = new QAction(QIcon(":/img/clear.png"), tr("Clear"), this);
+    mSenderClearAction = new QAction(QIcon(":/img/img/clear.png"), tr("Clear"), this);
     connect(mSenderClearAction, &QAction::triggered, this, &Widget::onSenderClearClicked);
-    mSenderPauseAction = new QAction(QIcon(":/img/pause.png"), tr("Pause"), this);
+    mSenderPauseAction = new QAction(QIcon(":/img/img/pause.png"), tr("Pause"), this);
     connect(mSenderPauseAction, &QAction::triggered, this, &Widget::onSenderPauseClicked);
-    mSenderResumeAction = new QAction(QIcon(":/img/resume.png"), tr("Resume"), this);
+    mSenderResumeAction = new QAction(QIcon(":/img/img/resume.png"), tr("Resume"), this);
     connect(mSenderResumeAction, &QAction::triggered, this, &Widget::onSenderResumeClicked);
-    mSenderCancelAction = new QAction(QIcon(":/img/cancel.png"), tr("Cancel"), this);
+    mSenderCancelAction = new QAction(QIcon(":/img/img/cancel.png"), tr("Cancel"), this);
     connect(mSenderCancelAction, &QAction::triggered, this, &Widget::onSenderCancelClicked);
 
     mRecOpenAction = new QAction(tr("Open"), this);
     connect(mRecOpenAction, &QAction::triggered, this, &Widget::openReceiverFileInCurrentIndex);
     mRecOpenFolderAction = new QAction(tr("Open folder"), this);
     connect(mRecOpenFolderAction, &QAction::triggered, this, &Widget::openReceiverFolderInCurrentIndex);
-    mRecRemoveAction = new QAction(QIcon(":/img/remove.png"), tr("Remove"), this);
+    mRecRemoveAction = new QAction(QIcon(":/img/img/remove.png"), tr("Remove"), this);
     connect(mRecRemoveAction, &QAction::triggered, this, &Widget::removeReceiverItemInCurrentIndex);
     mRecDeleteAction = new QAction(tr("Delete from disk"), this);
     connect(mRecDeleteAction, &QAction::triggered, this, &Widget::deleteReceiverFileInCurrentIndex);
-    mRecClearAction = new QAction(QIcon(":/img/clear.png"), tr("Clear"), this);
+    mRecClearAction = new QAction(QIcon(":/img/img/clear.png"), tr("Clear"), this);
     connect(mRecClearAction, &QAction::triggered, this, &Widget::onReceiverClearClicked);
-    mRecPauseAction = new QAction(QIcon(":/img/pause.png"), tr("Pause"), this);
+    mRecPauseAction = new QAction(QIcon(":/img/img/pause.png"), tr("Pause"), this);
     connect(mRecPauseAction, &QAction::triggered, this, &Widget::onReceiverPauseClicked);
-    mRecResumeAction = new QAction(QIcon(":/img/resume.png"), tr("Resume"), this);
+    mRecResumeAction = new QAction(QIcon(":/img/img/resume.png"), tr("Resume"), this);
     connect(mRecResumeAction, &QAction::triggered, this, &Widget::onReceiverResumeClicked);
-    mRecCancelAction = new QAction(QIcon(":/img/cancel.png"), tr("Cancel"), this);
+    mRecCancelAction = new QAction(QIcon(":/img/img/cancel.png"), tr("Cancel"), this);
     connect(mRecCancelAction, &QAction::triggered, this, &Widget::onReceiverCancelClicked);
 }

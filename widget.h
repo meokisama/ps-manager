@@ -40,8 +40,7 @@ private slots:
     void on_addProject_clicked();
     void on_btnCreate_clicked();
     void on_btnCancel_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
+    void on_makeCallBtn_clicked();
     void returnPressed();
     void newParticipant(const QString &nick);
     void participantLeft(const QString &nick);

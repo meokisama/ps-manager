@@ -17,5 +17,23 @@
         <file>img/pencil.svg</file>
         <file>img/add.svg</file>
         <file>img/remove.svg</file>
+        <file>img/aboutApp.png</file>
+        <file>img/cancel.png</file>
+        <file>img/clear.png</file>
+        <file>img/down.png</file>
+        <file>img/file.png</file>
+        <file>img/folder.png</file>
+        <file>img/icon.ico</file>
+        <file>img/icon.png</file>
+        <file>img/linux.png</file>
+        <file>img/osx.png</file>
+        <file>img/pause.png</file>
+        <file>img/refresh.png</file>
+        <file>img/resume.png</file>
+        <file>img/send.png</file>
+        <file>img/settings.png</file>
+        <file>img/systray-icon.png</file>
+        <file>img/up.png</file>
+        <file>img/windows.png</file>
     </qresource>
 </RCC>

@@ -88,6 +88,7 @@ border-radius: 30px;}</string>
          <property name="font">
           <font>
            <family>Poppins SemiBold</family>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -117,6 +118,7 @@ color: rgb(255, 255, 255);</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -232,6 +234,7 @@ border-radius: 5px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -308,6 +311,7 @@ border-radius: 30px;}</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>20</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -380,8 +384,8 @@ border-radius: 30px;</string>
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="res.qrc">
-            <normaloff>:/img/send.png</normaloff>:/img/send.png</iconset>
+           <iconset resource="img.qrc">
+            <normaloff>:/img/img/send.png</normaloff>:/img/img/send.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -422,8 +426,8 @@ border-radius: 30px;</string>
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="res.qrc">
-            <normaloff>:/img/settings.png</normaloff>:/img/settings.png</iconset>
+           <iconset resource="img.qrc">
+            <normaloff>:/img/img/settings.png</normaloff>:/img/img/settings.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -482,7 +486,7 @@ border-radius: 30px;</string>
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/img/up.png</pixmap>
+                 <pixmap resource="img.qrc">:/img/img/up.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>false</bool>
@@ -519,6 +523,9 @@ border-radius: 30px;</string>
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Resume</string>
                 </property>
@@ -526,8 +533,8 @@ border-radius: 30px;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/resume.png</normaloff>:/img/resume.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/resume.png</normaloff>:/img/img/resume.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -545,6 +552,9 @@ border-radius: 30px;</string>
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Pause</string>
                 </property>
@@ -552,8 +562,8 @@ border-radius: 30px;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/pause.png</normaloff>:/img/pause.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/pause.png</normaloff>:/img/img/pause.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -576,6 +586,9 @@ border-radius: 30px;</string>
                   <family>Montserrat</family>
                  </font>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Cancel selected item</string>
                 </property>
@@ -583,8 +596,8 @@ border-radius: 30px;</string>
                  <string>Cancel</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/cancel.png</normaloff>:/img/cancel.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/cancel.png</normaloff>:/img/img/cancel.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -599,6 +612,9 @@ border-radius: 30px;</string>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton_2">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Clear completed items</string>
                 </property>
@@ -606,8 +622,8 @@ border-radius: 30px;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/clear.png</normaloff>:/img/clear.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/clear.png</normaloff>:/img/img/clear.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -666,7 +682,7 @@ border-radius: 0;</string>
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/img/down.png</pixmap>
+                 <pixmap resource="img.qrc">:/img/img/down.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -700,6 +716,9 @@ border-radius: 0;</string>
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Resume</string>
                 </property>
@@ -707,8 +726,8 @@ border-radius: 0;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/resume.png</normaloff>:/img/resume.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/resume.png</normaloff>:/img/img/resume.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -726,6 +745,9 @@ border-radius: 0;</string>
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Pause</string>
                 </property>
@@ -733,8 +755,8 @@ border-radius: 0;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/pause.png</normaloff>:/img/pause.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/pause.png</normaloff>:/img/img/pause.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -757,6 +779,9 @@ border-radius: 0;</string>
                   <family>Montserrat</family>
                  </font>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Cancel selected item</string>
                 </property>
@@ -764,8 +789,8 @@ border-radius: 0;</string>
                  <string>Cancel</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/cancel.png</normaloff>:/img/cancel.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/cancel.png</normaloff>:/img/img/cancel.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -779,7 +804,10 @@ border-radius: 0;</string>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_4">
+               <widget class="QPushButton" name="pushButton">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>Clear completed items</string>
                 </property>
@@ -787,8 +815,8 @@ border-radius: 0;</string>
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="res.qrc">
-                  <normaloff>:/img/clear.png</normaloff>:/img/clear.png</iconset>
+                 <iconset resource="img.qrc">
+                  <normaloff>:/img/img/clear.png</normaloff>:/img/img/clear.png</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -853,6 +881,7 @@ border-radius: 0;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -909,7 +938,7 @@ border-radius: 30px;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="makeCallBtn">
          <property name="geometry">
           <rect>
            <x>460</x>
@@ -922,6 +951,7 @@ border-radius: 30px;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>12</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -951,6 +981,7 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1001,7 +1032,7 @@ border-radius: 30px;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="img.qrc">:/img/img/about.png</pixmap>
+          <pixmap resource="img.qrc">:/img/img/aboutApp.png</pixmap>
          </property>
         </widget>
        </widget>
@@ -1018,6 +1049,7 @@ border-radius: 30px;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1090,6 +1122,7 @@ border-radius: 30px;</string>
           <font>
            <family>SFU Futura_07</family>
            <pointsize>18</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -1353,6 +1386,7 @@ color: white;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>10</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -1366,7 +1400,7 @@ color: white;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="changeAvatarBtn">
          <property name="geometry">
           <rect>
            <x>230</x>
@@ -1409,6 +1443,7 @@ color: white;</string>
          <font>
           <family>Poppins SemiBold</family>
           <pointsize>22</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1457,6 +1492,7 @@ border-radius: 30px;</string>
           <font>
            <family>Poppins SemiBold</family>
            <pointsize>20</pointsize>
+           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -2044,6 +2080,7 @@ border-radius: 35px;
       <property name="font">
        <font>
         <family>Poppins Black</family>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -2095,6 +2132,7 @@ border-radius: 35px;
         <font>
          <family>SFU Futura_07</family>
          <pointsize>18</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2159,6 +2197,7 @@ border-radius: 30px;
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>26</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2337,6 +2376,7 @@ color: white;</string>
         <font>
          <family>Poppins SemiBold</family>
          <pointsize>10</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2362,8 +2402,6 @@ color: white;</string>
  </widget>
  <resources>
   <include location="img.qrc"/>
-  <include location="res.qrc"/>
-  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -30,7 +30,6 @@ SOURCES += \
     transfer/transfer.cpp \
     transfer/transferserver.cpp \
     ui/aboutdialog.cpp \
-    ui/mainwindow.cpp \
     ui/receiverselectordialog.cpp \
     ui/settingsdialog.cpp \
     util.cpp \
@@ -57,7 +56,6 @@ HEADERS += \
     transfer/transfer.h \
     transfer/transferserver.h \
     ui/aboutdialog.h \
-    ui/mainwindow.h \
     ui/receiverselectordialog.h \
     ui/settingsdialog.h \
     util.h \
@@ -68,7 +66,6 @@ FORMS += \
     project.ui \
     task.ui \
     ui/aboutdialog.ui \
-    ui/mainwindow.ui \
     ui/receiverselectordialog.ui \
     ui/settingsdialog.ui \
     widget.ui
@@ -85,9 +82,7 @@ requires(qtConfig(listwidget))
 
 RESOURCES += \
     img.qrc \
-    img.qrc \
-    res.qrc \
-    res.qrc
+    img.qrc
 
 DISTFILES += \
     ProjectManager.pro.user \
