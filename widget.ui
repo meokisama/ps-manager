@@ -2351,11 +2351,11 @@ color: white;</string>
        </property>
       </widget>
      </widget>
-     <zorder>addp</zorder>
      <zorder>stackedWidget</zorder>
      <zorder>closeButton</zorder>
      <zorder>buttonbar</zorder>
      <zorder>frame_7</zorder>
+     <zorder>addp</zorder>
     </widget>
    </item>
   </layout>
