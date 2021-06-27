@@ -167,6 +167,15 @@ void Widget::on_btnUser_clicked()
         ui->fullname->setText(full.append(" ").append(fetcher.value(iLN).toString()));
     }
 
+    ui->your1_0->setVisible(false);
+    ui->your1_1->setVisible(false);
+    ui->your1_2->setVisible(false);
+    ui->your1_3->setVisible(false);
+    ui->your1_4->setVisible(false);
+    ui->your1_5->setVisible(false);
+    ui->your1_6->setVisible(false);
+    ui->your1_7->setVisible(false);
+
     fetchTasks();
 }
 
