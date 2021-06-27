@@ -14,10 +14,26 @@ SOURCES += \
     database.cpp \
     loginform.cpp \
     main.cpp \
+    model/device.cpp \
+    model/devicelistmodel.cpp \
+    model/transferinfo.cpp \
+    model/transfertablemodel.cpp \
     peermanager.cpp \
     project.cpp \
     server.cpp \
+    settings.cpp \
+    singleinstance.cpp \
     task.cpp \
+    transfer/devicebroadcaster.cpp \
+    transfer/receiver.cpp \
+    transfer/sender.cpp \
+    transfer/transfer.cpp \
+    transfer/transferserver.cpp \
+    ui/aboutdialog.cpp \
+    ui/mainwindow.cpp \
+    ui/receiverselectordialog.cpp \
+    ui/settingsdialog.cpp \
+    util.cpp \
     widget.cpp
 
 HEADERS += \
@@ -25,16 +41,36 @@ HEADERS += \
     connection.h \
     database.h \
     loginform.h \
+    model/device.h \
+    model/devicelistmodel.h \
+    model/transferinfo.h \
+    model/transfertablemodel.h \
     peermanager.h \
     project.h \
     server.h \
+    settings.h \
+    singleinstance.h \
     task.h \
+    transfer/devicebroadcaster.h \
+    transfer/receiver.h \
+    transfer/sender.h \
+    transfer/transfer.h \
+    transfer/transferserver.h \
+    ui/aboutdialog.h \
+    ui/mainwindow.h \
+    ui/receiverselectordialog.h \
+    ui/settingsdialog.h \
+    util.h \
     widget.h
 
 FORMS += \
     loginform.ui \
     project.ui \
     task.ui \
+    ui/aboutdialog.ui \
+    ui/mainwindow.ui \
+    ui/receiverselectordialog.ui \
+    ui/settingsdialog.ui \
     widget.ui
 
 TRANSLATIONS += \
@@ -48,7 +84,14 @@ requires(qtConfig(udpsocket))
 requires(qtConfig(listwidget))
 
 RESOURCES += \
-    img.qrc
+    img.qrc \
+    img.qrc \
+    res.qrc \
+    res.qrc
 
 DISTFILES += \
-    database.db
+    ProjectManager.pro.user \
+    README.md \
+    database.db \
+    text/credits.html \
+    text/gpl-3.0.txt

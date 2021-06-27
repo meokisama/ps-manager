@@ -1,52 +1,35 @@
-#ifndef WIDGET_H
-#define WIDGET_H
 
-#include "client.h"
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QSystemTrayIcon>
+
 #include "model/transfertablemodel.h"
 #include "model/devicelistmodel.h"
 #include "transfer/devicebroadcaster.h"
 #include "transfer/transferserver.h"
 
-#include <QWidget>
-#include <QTextTableFormat>
+namespace Ui {
+class MainWindow;
+}
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class Widget; }
-QT_END_NAMESPACE
-
-class Widget : public QWidget
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Widget(QWidget *parent = nullptr);
-    ~Widget();
-    void fetchProject();
-    void resetProject();
-    void fetchTasks();
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow() override;
 
-public slots:
-    void appendMessage(const QString &from, const QString &message);
+protected:
+    void closeEvent(QCloseEvent* event) override;
 
-private slots:
-    void on_closeButton_clicked();
-    void on_btnHome_clicked();
-    void on_btnLiveChat_clicked();
-    void on_btnCalendar_clicked();
-    void on_btnVideo_clicked();
-    void on_btInfo_clicked();
-    void on_btnUser_clicked();
-    void on_btnSave_clicked();
-    void on_addProject_clicked();
-    void on_btnCreate_clicked();
-    void on_btnCancel_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-    void returnPressed();
-    void newParticipant(const QString &nick);
-    void participantLeft(const QString &nick);
-    void showInformation();
+public Q_SLOTS:
+    void setMainWindowVisibility(bool visible = true);
 
+private Q_SLOTS:
+    void onShowMainWindowTriggered();
     void onSendFilesActionTriggered();
     void onSendFolderActionTriggered();
     void onSettingsActionTriggered();
@@ -86,20 +69,23 @@ private slots:
     void onSelectedSenderStateChanged(TransferState state);
     void onSelectedReceiverStateChanged(TransferState state);
 
+    void quitApp();
+
 private:
-    Ui::Widget *ui;
-    int h = 0 , v = 1;
-    Client client;
-    QString myNickName;
-    QTextTableFormat tableFormat;
     void setupActions();
     void setupToolbar();
+    void setupSystrayIcon();
     void connectSignals();
     void sendFile(const QString& folderName, const QString& fileName, const Device& receiver);
     void selectReceiversAndSendTheFiles(QVector<QPair<QString, QString> > dirNameAndFullPath);
 
     bool anyActiveSender();
     bool anyActiveReceiver();
+
+    bool mForceQuit{false};
+    Ui::MainWindow *ui;
+    QSystemTrayIcon* mSystrayIcon;
+    QMenu* mSystrayMenu;
 
     TransferTableModel* mSenderModel;
     TransferTableModel* mReceiverModel;
@@ -133,4 +119,5 @@ private:
     QAction* mRecResumeAction;
     QAction* mRecCancelAction;
 };
-#endif // WIDGET_H
+
+#endif // MAINWINDOW_H
