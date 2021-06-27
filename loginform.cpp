@@ -105,6 +105,7 @@ void LoginForm::on_pushButton_2_clicked()
             {
               ui->stackedWidget->setCurrentIndex(0);
               ui->state->setText("Sign up seccessfully! You can now login.");
+              ui->state->setStyleSheet("color: rgb(0, 193, 0);");
               ui->fname->clear();
               ui->lname->clear();
               ui->passWord->clear();

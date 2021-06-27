@@ -24,7 +24,7 @@ public:
     void delProject(QString);
     int findMaxID();
     QString fetchName(QString);
-    void addTasks(QString, QString, QString);
+    void addTasks(QString, QString, QString, QString);
     void updateTasks(QString, QString, QString);
     void deleteTasks(QString,QString);
 private:

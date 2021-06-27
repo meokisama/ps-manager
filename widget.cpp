@@ -52,6 +52,15 @@ Widget::Widget(QWidget *parent)
     newParticipant(myNickName);
     tableFormat.setBorder(0);
     QTimer::singleShot(10 * 1000, this, SLOT(showInformation()));
+
+    ui->your1_0->setVisible(false);
+    ui->your1_1->setVisible(false);
+    ui->your1_2->setVisible(false);
+    ui->your1_3->setVisible(false);
+    ui->your1_4->setVisible(false);
+    ui->your1_5->setVisible(false);
+    ui->your1_6->setVisible(false);
+    ui->your1_7->setVisible(false);
 }
 
 Widget::~Widget()
@@ -118,6 +127,7 @@ void Widget::on_btnUser_clicked()
         ui->fullname->setText(full.append(" ").append(fetcher.value(iLN).toString()));
     }
 
+    fetchTasks();
 }
 
 void Widget::on_btnSave_clicked()
@@ -314,9 +324,71 @@ void Widget::participantLeft(const QString &nick)
 void Widget::showInformation()
 {
     if (ui->listWidget->count() == 1) {
-        QMessageBox::information(this, tr("Chat"),
-                                 tr("Launch several instances of this "
-                                    "program on your local network and "
-                                    "start chatting!"));
+        //QMessageBox::information(this, tr("Chat"), tr("Launch several instances of this program on your local network and start chatting!"));
+    }
+}
+
+void Widget::fetchTasks()
+{
+    QSqlQuery fetcher;
+    fetcher.prepare("SELECT * FROM tasks WHERE recip = (:rc)");
+    fetcher.bindValue(":rc", ui->lname->text());
+    fetcher.exec();
+
+    int iN = fetcher.record().indexOf("name");
+    int iS = fetcher.record().indexOf("state");
+    int iR = fetcher.record().indexOf("recip");
+
+    while(fetcher.next())
+    {
+        if (!ui->your1_0->isVisible())
+        {
+            ui->your1_0->setVisible(true);
+            ui->checkBox->setText("[" + fetcher.value(iR).toString() + "]  " + fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_1->isVisible())
+        {
+            ui->your1_1->setVisible(true);
+            ui->checkBox_2->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_2->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_2->isVisible())
+        {
+            ui->your1_2->setVisible(true);
+            ui->checkBox_3->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_3->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_3->isVisible())
+        {
+            ui->your1_3->setVisible(true);
+            ui->checkBox_4->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_4->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_4->isVisible())
+        {
+            ui->your1_4->setVisible(true);
+            ui->checkBox_5->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_5->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_5->isVisible())
+        {
+            ui->your1_5->setVisible(true);
+            ui->checkBox_6->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_6->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_6->isVisible())
+        {
+            ui->your1_6->setVisible(true);
+            ui->checkBox_7->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_7->setCheckState(Qt::Checked);}
+        } else if (!ui->your1_7->isVisible())
+        {
+            ui->your1_7->setVisible(true);
+            ui->checkBox_8->setText("[" + fetcher.value(iR).toString() + "]  " +fetcher.value(iN).toString());
+            if (fetcher.value(iS).toString() == "D") {ui->checkBox->setStyleSheet("font-style: italic; text-decoration: line-through;");
+            ui->checkBox_8->setCheckState(Qt::Checked);}
+        }
     }
 }

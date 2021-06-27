@@ -563,6 +563,31 @@ background: rgb(243, 246, 253);</string>
        </property>
       </widget>
      </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>688</x>
+        <y>95</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    border: 1px solid rgb(85, 170, 255);
+	background: rgb(243, 246, 253);
+}</string>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>

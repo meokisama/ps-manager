@@ -51,7 +51,7 @@ void Database::initialQuery()
     createPROJECTS.exec();
 
     QSqlQuery createTASKS(db);
-    createTASKS.prepare("CREATE TABLE tasks (id INTEGER NOT NULL, name TEXT NOT NULL, state INTEGER NOT NULL)");
+    createTASKS.prepare("CREATE TABLE tasks (id INTEGER NOT NULL, name TEXT NOT NULL, state TEXT NOT NULL, recip TEXT NOT NULL)");
     createTASKS.exec();
 }
 
@@ -168,13 +168,14 @@ QString Database::fetchName(QString id)
     return nm;
 }
 
-void Database::addTasks(QString id, QString nm, QString st)
+void Database::addTasks(QString id, QString nm, QString st, QString rc)
 {
     QSqlQuery insertQuery(db);
-    insertQuery.prepare("INSERT INTO tasks VALUES(:id, :nm, :st)");
+    insertQuery.prepare("INSERT INTO tasks VALUES(:id, :nm, :st, :rc)");
     insertQuery.bindValue(":id", id);
     insertQuery.bindValue(":nm", nm);
     insertQuery.bindValue(":st", st);
+    insertQuery.bindValue(":rc", rc);
 
     insertQuery.exec();
 }

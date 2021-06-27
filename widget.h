@@ -19,6 +19,7 @@ public:
     ~Widget();
     void fetchProject();
     void resetProject();
+    void fetchTasks();
 
 public slots:
     void appendMessage(const QString &from, const QString &message);
